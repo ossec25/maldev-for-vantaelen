@@ -1,7 +1,7 @@
 import winim
 import strformat # Nim equivalent de f-strings
 
-# la procédure reçoit le shell code qouq forme de tableau de bytes
+# la procédure reçoit le shell code sous la forme de tableau de bytes
 proc injectShellcode[I, T](shellcode: array[I, T]): void =
 
     # Choix du process ID (PID) où injecter le shellcode
