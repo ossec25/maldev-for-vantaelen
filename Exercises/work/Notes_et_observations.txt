@@ -1,0 +1,84 @@
+Exercice 1
+----------
+
+1. Comprendre en quoi consiste les slides
+
+2. Qu'est-ce que Nim et comment cela fonctionne?
+
+Faire de petit test de codes avant de commencer.
+
+3. Que fait le premier exercice et commencer à décortiquer le code (heureusement pas trop grand)
+
+4. Comment désactiver totalement defender car sinon erreur sur msfvenom
+Methode 1: Disable temporairement --> fonctionne pas
+Methode 2: Disable via Group Policy Editor (Pro/Enterprise)  fonctionne pas
+Methode 3: Essayer sur une kali --> top fonctionnel mais ce n'est pas l'exercice
+
+Methode 4: Tout désinstaller avec un script (ok)
+https://github.com/ionuttbara/windows-defender-remover
+
+!!! mettre le directory en exclusion dans defender sinon ne démarrera pas!!!
+
+git clone https://github.com/ionuttbara/windows-defender-remover.git
+cd windows-defender-remover
+Script_Run.bat
+
+------ Defender Remover Script , version 12.8.4 ------
+Select an option:
+
+Do you want to remove Windows Defender and alongside components? After this you'll need to reboot.
+If you PC have a Microsoft Pluton Chip, you can disable from BIOS anytime. (This script removes the integration of Pluton Chip Support and Processing from Windows.)
+After confirmation of Removal, your Device will RESTART!!
+A backup and/or System Restore point is recommended.
+[Y] Remove Windows Defender Antivirus + Disable All Security Mitigations
+[A] Remove Windows Defender only, but keep UAC Enabled
+[S] Disable All Security Mitigations
+ Choisir A
+
+5.Install Metasploit via powershell
+
+https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html
+
+
+Param(
+    $DownloadURL = "https://windows.metasploit.com/metasploitframework-latest.msi",
+    $DownloadLocation = "$env:APPDATA/Metasploit",
+    $InstallLocation = "C:\Tools",
+    $LogLocation = "$DownloadLocation/install.log"
+)
+
+If(! (Test-Path $DownloadLocation) ){
+    New-Item -Path $DownloadLocation -ItemType Directory
+}
+
+If(! (Test-Path $InstallLocation) ){
+    New-Item -Path $InstallLocation -ItemType Directory
+}
+
+$Installer = "$DownloadLocation/metasploit.msi"
+
+Invoke-WebRequest -UseBasicParsing -Uri $DownloadURL -OutFile $Installer
+
+& $Installer /q /log $LogLocation INSTALLLOCATION="$InstallLocation"
+
+
+6. Revenir à l'exercice et continuer le décorticage et annotation + modification du payload (ici démarre un checkdisk)
+
+7. Conclusion: Intéressant car apercu d'un monde inconnu pour moi
+
+
+
+Exercice 2
+-----------
+
+La lecture du code est évidemment plus simple car le code est quasiment identique à l'exercice 1
+
+Tout s'exécute correctement
+
+Le PID est fixe et doit donc être modifié à chaque redémarrage de l'explorer + recompilation du programme
+
+Le payload choisi (ici "User Account Control Settings" et bien démarré mais avec un process id à part
+
+Quel est l’intérêt d’ouvrir un process existant si un nouveau est créé ensuite ?
+
+
