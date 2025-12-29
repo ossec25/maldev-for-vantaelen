@@ -5,7 +5,7 @@ Exercice 1
 
 2. Qu'est-ce que Nim et comment cela fonctionne?
 
-Faire de petit test de codes avant de commencer.
+Faire de petits tests de code avant de commencer.
 
 3. Que fait le premier exercice et commencer à décortiquer le code (heureusement pas trop grand)
 
@@ -80,5 +80,6 @@ Le PID est fixe et doit donc être modifié à chaque redémarrage de l'explorer
 Le payload choisi (ici "User Account Control Settings" et bien démarré mais avec un process id à part
 
 Quel est l’intérêt d’ouvrir un process existant si un nouveau est créé ensuite ?
+
 
 
