@@ -66,7 +66,16 @@ Invoke-WebRequest -UseBasicParsing -Uri $DownloadURL -OutFile $Installer
 
 7. Conclusion: Intéressant car apercu d'un monde inconnu pour moi
 
+Bonus 1
+-------
 
+Idem exercice 1 mais
+
+    # Nim a des types de pointeurs comme ptr[T] et l’adresse d’une variable peut être obtenue avec addr.
+    # Le cast en Nim est fait avec la fonction castNewType. C’est un cast non sécurisé car il peut y avoir un débordement de mémoire
+   
+    let f = cast[proc(){.nimcall.}](executable_memory)
+    f()
 
 Exercice 2
 -----------
@@ -115,3 +124,4 @@ byte 0xae, 0x1a, 0xd1, 0xb6, 0xa2, 0xba, 0x92, 0x52, 0x52, 0x52, 0x13, 0x03, 0x1
 
 Et le deuxième, BasicAVevasion.exe , utilise la même clé (0x52) pour décrypter le tableau avant de l'injecter dans le process distant comme dans l'exercice 2 
 Il s'exécute en utilisant le process ID fixe distant de l'explorer: ici process id 6412
+
