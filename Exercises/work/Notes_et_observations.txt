@@ -142,16 +142,17 @@ byte 0xae, 0x1a, 0xd1, 0xb6, 0xa2, 0xba, 0x92, 0x52, 0x52, 0x52, 0x13, 0x03, 0x1
 Et le deuxième, BasicAVevasion.exe , utilise la même clé (0x52) pour décrypter le tableau avant de l'injecter dans le process distant comme dans l'exercice 2 
 Il s'exécute en utilisant le process ID fixe distant de l'explorer
 
-Tester AV
--------------------
-J'ai repris l'exercice 3 pour que l'exe demande un executable et pour trouver le process ID dynamiquement. Un mix entre l'exercice 2 et le 3.
+Bonus 3: Tester l'exe contre AV
+----------------------------------------
+J'ai repris l'exercice 3 (exercice 4 inconnu) pour que l'exe demande un executable et pour trouver le process ID dynamiquement. Un mix entre l'exercice 2 et le 3.
 L'exe a été testé sur la deuxième vm sur laquelle tourne defender.
 
 L'exe contenant le shellcode encrypté n'est pas supprimé par Defender lors de la copie de fichier.
 
 Analyse rapide de defender exécutée --> no new thread found et l'exe est toujours là
 
-Le malware avec shellcode s'exécute donc sans soucis avec Defender actif.
+Le malware avec shellcode encrypté s'exécute donc sans soucis avec Defender actif.
+
 
 
 
