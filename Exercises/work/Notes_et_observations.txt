@@ -110,8 +110,8 @@ Pas de remarque particulière sauf que heureusement il y a la solution ;-)
 Exercice 3
 ----------
 
-Idem que l'exercice 2 mais avec encryption du shellcode de l'executable 
-J'ai choisi charmap.exe car il ne demande pas d'élévation de droits.
+Idem que l'exercice 2 mais avec encryption du shellcode. Là ça devient intéressant...
+J'ai choisi charmap.exe comme payload car il ne demande pas d'élévation de droits.
 
 2 programmes. Le premier Encrypt_DV.exe sert à encrypter le shellcode. Le shellcode démarrera charmap.exe une fois injecté
 
@@ -144,7 +144,7 @@ Il s'exécute en utilisant le process ID fixe distant de l'explorer
 
 Bonus 3: Tester l'exe contre AV
 ----------------------------------------
-J'ai repris l'exercice 3 (exercice 4 inconnu) pour que l'exe demande un executable et pour trouver le process ID dynamiquement. Un mix entre l'exercice 2 et le 3.
+J'ai repris l'exercice 3 (exercice 4 inconnu) pour que l'exe demande un executable et trouve le process ID dynamiquement. Un mix entre l'exercice 2 et le 3.
 L'exe a été testé sur la deuxième vm sur laquelle tourne defender.
 
 L'exe contenant le shellcode encrypté n'est pas supprimé par Defender lors de la copie de fichier.
@@ -152,6 +152,7 @@ L'exe contenant le shellcode encrypté n'est pas supprimé par Defender lors de 
 Analyse rapide de defender exécutée --> no new thread found et l'exe est toujours là
 
 Le malware avec shellcode encrypté s'exécute donc sans soucis avec Defender actif.
+
 
 
 
