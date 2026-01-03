@@ -90,6 +90,11 @@ Le payload choisi (ici "User Account Control Settings" et bien démarré mais av
 
 Quel est l’intérêt d’ouvrir un process existant si un nouveau est créé ensuite ?
 
+Bonus 2
+-------
+
+Evolution de l'exercice 2 avec recherche du process ID de l'exécutable passé en argument
+Pas de remarque particulière sauf que heureusement qu'il y a la solution;-)
 
 Exercice 3
 ----------
@@ -124,4 +129,5 @@ byte 0xae, 0x1a, 0xd1, 0xb6, 0xa2, 0xba, 0x92, 0x52, 0x52, 0x52, 0x13, 0x03, 0x1
 
 Et le deuxième, BasicAVevasion.exe , utilise la même clé (0x52) pour décrypter le tableau avant de l'injecter dans le process distant comme dans l'exercice 2 
 Il s'exécute en utilisant le process ID fixe distant de l'explorer: ici process id 6412
+
 
