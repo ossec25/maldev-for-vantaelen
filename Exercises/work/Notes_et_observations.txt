@@ -73,7 +73,7 @@ the disk may be locked by another process.
 You have to invoke this utility running in elevated mode
 and make sure the disk is unlocked.
 
-8. Test sur machine avec defender: supprime le .exe
+8. Test depuis la machine avec defender actif: il supprime le .exe
 
 9. Conclusion: Intéressant car apercu d'un monde inconnu pour moi
 
@@ -105,12 +105,13 @@ Bonus 2
 -------
 
 Evolution de l'exercice 2 avec recherche du process ID de l'exécutable passé en argument
-Pas de remarque particulière sauf que heureusement qu'il y a la solution;-)
+Pas de remarque particulière sauf que heureusement il y a la solution ;-)
 
 Exercice 3
 ----------
 
-Idem que l'exercice 2 mais avec encryption du shellcode de l'executable charmap.exe
+Idem que l'exercice 2 mais avec encryption du shellcode de l'executable 
+J'ai choisi charmap.exe car il ne demande pas d'élévation de droits.
 
 2 programmes. Le premier Encrypt_DV.exe sert à encrypter le shellcode. Le shellcode démarrera charmap.exe une fois injecté
 
@@ -139,18 +140,19 @@ byte 0xae, 0x1a, 0xd1, 0xb6, 0xa2, 0xba, 0x92, 0x52, 0x52, 0x52, 0x13, 0x03, 0x1
 
 
 Et le deuxième, BasicAVevasion.exe , utilise la même clé (0x52) pour décrypter le tableau avant de l'injecter dans le process distant comme dans l'exercice 2 
-Il s'exécute en utilisant le process ID fixe distant de l'explorer: ici process id 6412
+Il s'exécute en utilisant le process ID fixe distant de l'explorer
 
 Tester AV
 -------------------
-J'ai repris l'exercice 3 pour que l'exe demande un executable et trouver le process ID dynamiquement.
+J'ai repris l'exercice 3 pour que l'exe demande un executable et pour trouver le process ID dynamiquement. Un mix entre l'exercice 2 et le 3.
 L'exe a été testé sur la deuxième vm sur laquelle tourne defender.
 
 L'exe contenant le shellcode encrypté n'est pas supprimé par Defender lors de la copie de fichier.
 
 Analyse rapide de defender exécutée --> no new thread found et l'exe est toujours là
 
-Le malware avec shellcode s'exécute donc sans soucis avec Defender actif
+Le malware avec shellcode s'exécute donc sans soucis avec Defender actif.
+
 
 
 
