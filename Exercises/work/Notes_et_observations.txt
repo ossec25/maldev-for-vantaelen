@@ -64,7 +64,18 @@ Invoke-WebRequest -UseBasicParsing -Uri $DownloadURL -OutFile $Installer
 
 6. Revenir à l'exercice et continuer le décorticage et annotation + modification du payload (ici démarre un checkdisk)
 
-7. Conclusion: Intéressant car apercu d'un monde inconnu pour moi
+7. Si la session n'a pas assez de privilèges --> erreur avec un programme qui a besoin de droits (checkdisk)
+
+C:\work\tests>BasicShellcodeLoader_DV.exe
+
+C:\work\tests>Access Denied as you do not have sufficient privileges or
+the disk may be locked by another process.
+You have to invoke this utility running in elevated mode
+and make sure the disk is unlocked.
+
+8. Test sur machine avec defender: supprime le .exe
+
+9. Conclusion: Intéressant car apercu d'un monde inconnu pour moi
 
 Bonus 1
 -------
@@ -129,5 +140,6 @@ byte 0xae, 0x1a, 0xd1, 0xb6, 0xa2, 0xba, 0x92, 0x52, 0x52, 0x52, 0x13, 0x03, 0x1
 
 Et le deuxième, BasicAVevasion.exe , utilise la même clé (0x52) pour décrypter le tableau avant de l'injecter dans le process distant comme dans l'exercice 2 
 Il s'exécute en utilisant le process ID fixe distant de l'explorer: ici process id 6412
+
 
 
