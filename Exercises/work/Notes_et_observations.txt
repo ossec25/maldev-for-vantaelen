@@ -153,7 +153,7 @@ Analyse rapide de defender exécutée --> no new thread found et l'exe est toujo
 
 Le malware avec shellcode encrypté s'exécute donc sans soucis avec Defender actif.
 
-Dans un environnement avec un EDR, il est bien détecté.
+Dans un environnement avec un EDR, il est bien détecté mais pas bloqué.
 L'event log de Tehtris EPP contient ceci:
 
 Antimalware
@@ -162,7 +162,9 @@ No action was taken.Process path: C:\Windows\explorer.exe. T
 hreat name: ATC.SuspiciousBehavior.2850B99A70439F76. 
 To block malicious processes, please contact your system administrator.
 
-
+Process path: C:\work\BasicAVEvasion_Dynamic_DV.exe. 
+Threat name: ATC.SuspiciousBehavior.2850B99A139138A8. 
+To block malicious processes, please contact your system administrator.
 
 
 
